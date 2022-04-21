@@ -1,0 +1,15 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(160, 207, 207);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    box-shadow: 0 0 1em gray;
+    border-radius: 0.5em;
+}
