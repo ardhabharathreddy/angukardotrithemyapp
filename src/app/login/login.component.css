@@ -1,0 +1,36 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginform{
+    width: 40%;
+    height: 70%;
+    background-color: white;
+    box-shadow: 0 0 1em gray;
+    border-radius: 1em;
+}
+.formclass{
+    padding: 1em;
+}
+.google-button{
+    margin-bottom: 1em;
+    background-color: red;
+    border: 0;
+    font-weight: 400;
+    font-size: medium;
+    font-style: san-serif;
+}
+.facebook-button{
+    border: 0;
+    background-color: rgb(56, 35, 118);
+    font-weight: 400;
+    font-size: medium;
+    font-style: san-serif;
+}
+.btn{
+    border-radius: 2em;
+}

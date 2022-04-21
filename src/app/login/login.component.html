@@ -1,5 +1,23 @@
-<div class="parent row">
-    <div class="col loginform">
-
+<div class="parent">
+    <div class="loginform">
+        <form class="formclass" [formGroup]="loginForm">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" formControlName="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block submit button" (click)="login()" [disabled]="loginForm.invalid">Submit</button>
+            <hr>
+            <button type="submit" class="btn btn-primary btn-block google-button">SIGN IN WITH GOOGLE</button>
+            <button type="submit" class="btn btn-primary btn-block facebook-button">SIGN IN WITH FACEBOOK</button>
+          </form>
     </div>
 </div>
