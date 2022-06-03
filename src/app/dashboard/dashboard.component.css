@@ -10,6 +10,30 @@
     width: 90%;
     height: 80%;
     background-color: white;
+    display: flex;
+}
+.menu-col{
+    width:20%;
+    height: 100%;
+    background-color: rgb(241, 235, 235);
+    
+}
+.content-col{
+    width:80%;
+    height: 100%;;
+    background-color: white;
+    overflow: auto;
+}
+.content{
+    overflow: auto;
+}
+.child-row{
+    display: flex;
+    height: 90%;
+    width: 90%;
     box-shadow: 0 0 1em gray;
-    border-radius: 0.5em;
+}
+h6{
+    cursor: pointer;
+    text-align: center;
 }

@@ -6,19 +6,34 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule} from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateemployeeComponent } from './createemployee/createemployee.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
+import { AboutModule } from 'src/about/about.module';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateemployeeComponent,
+    EmployeeComponent,
+    PagenotfoundComponent,
+    EmployeedetailsComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    AboutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,26 @@
 <div class="parent">
-    <div class="child">
-        <div class="row">
-            <div class="col">
-
+        <div class="child">
+            <div class="menu-col">
+              <div class="menu-item">
+                 <h6 routerLink="createemployee">Create Employee</h6>
+              </div>
+              <div class="menu-item">
+                  <h6 routerLink="employee">Employees</h6>
+              </div>
+              <div class="menu-item">
+                <h6 routerLink="aboutus">About Us</h6>
+              </div>
+              <div class="menu-item">
+                <h6 routerLink="contactus">Contact Us[lazy]</h6>
+              </div>
+              <div class="menu-item">
+                <h6 routerLink="parent">parent</h6>
+              </div>
             </div>
-            <div class="col">
-
+            <div class="content-col">
+             <div class="content">
+                 <router-outlet></router-outlet>
+             </div>
             </div>
         </div>
-    </div>
 </div>

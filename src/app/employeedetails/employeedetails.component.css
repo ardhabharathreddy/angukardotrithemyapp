@@ -1,0 +1,7 @@
+.row-header,.row-education{
+    margin: 3em;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,98 @@
+<div class="parent">
+    <div class="child">
+        <form class="formclass" [formGroup]="employeeForm">
+            <div class="form-group">
+                <input type="text" formControlName="name" class="form-control" placeholder="name">
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="mobile" class="form-control" placeholder="mobile">
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="email" class="form-control" placeholder="email">
+            </div>
+            <div class="form-group">
+                <input type="date" formControlName="dob" class="form-control" placeholder="dob">
+            </div>
+            <div  formGroupName="address">
+                <div class="form-group">
+                    <caption>Address</caption>
+                    <input type="text" formControlName="addressline" class="form-control" placeholder="Addressline">
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="city" class="form-control" placeholder="city">
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="state" class="form-control" placeholder="state">
+                </div>
+                <div class="form-group">
+                    <input type="number" formControlName="pincode" class="form-control" placeholder="pin">
+                </div>
+            </div>
+            <div class="form-group buttons">
+                <button class="btn btn-primary" (click)="add()">Add Education</button>
+            </div>
+            <div formArrayName="education">
+                <div *ngFor="let education of educationFormArray.controls;let i=index">
+                    <div formGroupName="{{i}}">
+                        <div class="form-group">
+                            <caption>Education</caption>
+                            <input formControlName="qualification" type="text" class="form-control" placeholder="qualification">
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="year" type="number" class="form-control" placeholder="year">
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="percentage" type="number" class="form-control" placeholder="percentage">
+                        </div>
+                        <div class="form-group buttons" >
+                            <button class="btn btn-primary" (click)="delet(i)">Delete</button>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Role:</label>
+                <label>Front-End</label>
+                <input type="radio" formControlName="role" value="frontEnd">
+                <label>Back-End</label>
+                <input type="radio" formControlName="role" value="backEnd">  
+            </div>
+            <ng-container *ngIf="employeeForm.get('role')?.value=='frontEnd'">
+                <ng-container class="form-group">
+                    <input type="text" formControlName="html" class="form-control" placeholder="html">
+                </ng-container>
+                <ng-container class="form-group">
+                    <input type="text" formControlName="css" class="form-control" placeholder="css">
+                </ng-container>
+                <ng-container class="form-group">
+                    <input type="text" formControlName="javascript" class="form-control" placeholder="javascript">
+                </ng-container>
+                <ng-container class="form-group">
+                    <input type="text" formControlName="angular" class="form-control" placeholder="angular">
+                </ng-container>
+            </ng-container>
+            <ng-container *ngIf="employeeForm.get('role')?.value=='backEnd'">
+                <ng-container class="form-group">
+                    <input type="text" formControlName="java" class="form-control" placeholder="java">
+                </ng-container>
+                <ng-container class="form-group">
+                    <input type="text" formControlName="sql" class="form-control" placeholder="sql">
+                </ng-container>
+                <ng-container class="form-group">
+                    <input type="text" formControlName="empressJs" class="form-control" placeholder="empressJs">
+                </ng-container>
+                <ng-container class="form-group">
+                    <input type="text" formControlName="mongoDB" class="form-control" placeholder="mongoDB">
+                </ng-container>
+            </ng-container>
+            <div class="form-group">
+                <input type="number" formControlName="id" class="form-control" placeholder="id">
+            </div>
+            <div class="form-group buttons">
+                <button (click)="submit()" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<pre>{{detailsOfEmployee|json}}</pre>

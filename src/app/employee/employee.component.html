@@ -1,0 +1,67 @@
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="filterby" [(ngModel)]="filterBy">
+</div>
+<div class="form-group">
+    <label>Order By:</label>
+    <label>Ascending</label>
+    <input type="radio" name="order" [(ngModel)]="order" value="asc">
+    <label>Descending</label>
+    <input type="radio" name="order" [(ngModel)]="order" value="desc">
+</div>
+<div class="form-group">
+    <label>Sort By:</label>
+    <label>Name</label>
+    <input type="radio" name="sort" [(ngModel)]="sort" value="name">
+    <label>ID</label>
+    <input type="radio" name="sort" [(ngModel)]="sort" value="id">
+</div>
+<div class="form-group buttons">
+        <button class="btn btn-primary" (click)="filter()">Filter</button>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>ADDRESS</th>
+            <!-- <th>Education</th> -->
+            <th>Role</th>
+            <th>ID</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.name}}</td>
+            <td>{{employee.mobile}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.dob|date:'yyyy-dd-mm'}}</td>
+            <td>{{employee.address.addressline}}<span>,</span>{{employee.address.city}}<span>,</span>{{employee.address.state}}<span>,</span>{{employee.address.pincode}}</td>
+            <!-- <td>{{employee.education|json}}</td> -->
+            <th>{{employee.role}}</th>
+            <td>{{employee.id}}</td>
+            <td><span><button class="btn btn-outline-light text-dark" name="edit" (click)="edit(employee.id)"><i class="fa fa-edit"></i></button>
+                      <button class="btn btn-outline-light text-dark" name="view" (click)="view(employee.id)"><i class="fa fa-eye"></i></button>
+                      <button class="btn btn-outline-light text-dark" name="delete" (click)="delete(employee.id)"><i class="fa fa-trash-o"></i></button>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="row pagination-row">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="page(1,10)">Previous</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(1,10)">1</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(2,10)">2</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(3,10)">3</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(4,10)">4</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(5,10)">5</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(6,10)">6</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(7,10)">7</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(8,10)">8</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(9,10)">9</a></li>
+        <li class="page-item"><a class="page-link" (click)="page(10,10)">Next</a></li>
+      </ul>
+</div>

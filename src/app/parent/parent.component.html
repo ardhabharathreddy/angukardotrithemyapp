@@ -1,0 +1,3 @@
+<input type="text" [(ngModel)]="b" placeholder="this is parent to child">
+<p>this is child to parent:{{num}}</p>
+<div  class="child" ><app-child [ptoc]="b" (b)="catch($event)"></app-child></div>

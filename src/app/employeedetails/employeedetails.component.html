@@ -1,0 +1,108 @@
+<div class="row row-header">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 userdetails-col">
+        <div class="row">
+            <caption>User Details</caption>
+       </div>
+       <!-- Name -->
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+             <h5>Name:</h5>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5>:{{employee.name}}</h5>
+         </div>
+     </div>
+
+     <!-- Phone -->
+     <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5>phone</h5>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+           <h5>:{{employee.phone}}</h5>
+        </div>
+     </div>
+
+     <!-- email -->
+     <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5>email</h5>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+           <h5>:{{employee.email}}</h5>
+        </div>
+     </div>    
+      <div class="row">   
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5>dob</h5>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+           <h5>:{{employee.dob}}</h5>
+        </div>
+      </div>
+      <div class="row">   
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5>Id</h5>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+           <h5>:{{employee.id}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 address-col">
+        <div class="row">
+            <caption>Address</caption>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>Address Line</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>:{{employee.address.addressline}}</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>city</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>:{{employee.address.city}}</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>State</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>:{{employee.address.state}}</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>Pincode</h5>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5>:{{employee.address.pin}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-education">
+    <div class="row">
+        <caption>Education</caption>
+    </div>
+    <table class="table table-striped education-col">
+        <thead>
+            <tr>
+                <th>Qualification</th>
+                <th>Year</th>
+                <th>%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let education of employee.education">
+                <td>{{education.qualification}}</td>
+                <td>{{education.year}}</td>
+                <td>{{education.percentage}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row buttons">
+    <button (click)="viewPrev(employee.id)" class="btn btn-primary">Prev</button>
+    <button (click)="viewNext(employee.id)" class="btn btn-primary">Next</button>
+</div>
